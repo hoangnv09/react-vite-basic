@@ -8,6 +8,7 @@ const TodoData = (props) => {
     //     age:25,
     //     data:{}
     // }
+    //destrustring
     const {name, age,data}= props;
     // const name= props.name;
     // const age = props.age;
@@ -21,6 +22,9 @@ const TodoData = (props) => {
             <div>chuối to</div>
             <div>
                 chuối nhỏ
+            </div>
+            <div>
+                {JSON.stringify(props.todoList)}
             </div>
         </div>
     )

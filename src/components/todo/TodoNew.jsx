@@ -1,16 +1,22 @@
+import { useState } from 'react';
 import './todo.css'
 const TodoNew = (props) => {
-
-    console.log(">>> check point: ", props);
+    //useState hook (getter/setter)
+    // const valueInput = "huhu"
+    const [valueInput, setValueInput]= useState("hello")
+    // console.log(">>> check point: ", props);
     const { addNewTodo}= props;
     
     // addNewTodo("Hoang")
     const handleClick =()=>{
-        alert("click me")
+        // alert("click me")
+        console.log({valueInput});
+        
     }
 
     const handleOnChange =(name)=>{
-       console.log(">>>hihi", name);
+    //    console.log(">>>hihi", name);
+       setValueInput(name)
     }
     
     return (
@@ -23,6 +29,10 @@ const TodoNew = (props) => {
                 style={{cursor: "pointer"}}
                 onClick={handleClick}
             >Add</button>
+            <div>
+                hehehe {valueInput}
+            </div>
+
         </div>
     )
 }
