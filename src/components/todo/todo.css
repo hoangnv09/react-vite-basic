@@ -15,6 +15,10 @@
 .todo-data{
   border: 1px solid #ccc;
 }
+.todo-item{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 .todo-input-group {

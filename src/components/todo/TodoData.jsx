@@ -9,20 +9,32 @@ const TodoData = (props) => {
     //     data:{}
     // }
     //destrustring
-    const {name, age,data}= props;
+    const {todoList}= props;
     // const name= props.name;
     // const age = props.age;
     // const data= props.data;
 
     // console.log(">>> check props: ",props);
-    
+    const handleDelete= ()=>{
+
+    }
     return (
         <div className="todo-data">
-            <div>My name is {name}</div>
-            <div>chuối to</div>
+
+            {todoList.map((item, index)=>{
+                return(<div className='todo-item'>
+                    <div>
+{item.name}
+                    </div>
+                    <button onClick={handleDelete}>Delete</button>
+                    
+                </div>)
+            })}
+            {/* <div>My name is {name}</div> */}
+            {/* <div>chuối to</div>
             <div>
                 chuối nhỏ
-            </div>
+            </div> */}
             <div>
                 {JSON.stringify(props.todoList)}
             </div>

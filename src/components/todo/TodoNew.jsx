@@ -3,7 +3,7 @@ import './todo.css'
 const TodoNew = (props) => {
     //useState hook (getter/setter)
     // const valueInput = "huhu"
-    const [valueInput, setValueInput]= useState("hello")
+    const [valueInput, setValueInput]= useState("")
     // console.log(">>> check point: ", props);
     const { addNewTodo}= props;
     
@@ -12,6 +12,7 @@ const TodoNew = (props) => {
         // alert("click me")
         // console.log({valueInput});
         addNewTodo(valueInput)
+        setValueInput("")
         
     }
 
@@ -24,15 +25,14 @@ const TodoNew = (props) => {
         <div className="todo-input-group">
             <input className="todo-input" type="text" placeholder="Enter your task" 
             onChange={(event)=>handleOnChange(event.target.value)}
+            value={valueInput}
             />
             <button 
                 className="todo-add-btn" 
                 style={{cursor: "pointer"}}
                 onClick={handleClick}
             >Add</button>
-            <div>
-                hehehe {valueInput}
-            </div>
+           
 
         </div>
     )

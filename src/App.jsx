@@ -48,7 +48,7 @@ const App = () => {
       todoList={todoList}
       />
       <div className='logo-image'>
-        <img src={reactLogo} className='logo' alt="" srcset="" />
+        <img src={reactLogo} className='logo' alt="" srcSet="" />
       </div>
     </div>
   )
