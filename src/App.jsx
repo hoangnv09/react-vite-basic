@@ -4,6 +4,8 @@ import TodoData from './components/todo/TodoData';
 import reactLogo from './assets/react.svg';
 import './components/todo/todo.css';
 import { useState } from 'react';
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
 const App = () => {
 
   const [todoList, setTodoList] = useState([
@@ -31,44 +33,38 @@ const App = () => {
   const randomIntFromInterval = (min, max) => { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  const deleteTodo= (id)=>{
-    const newTodo =  todoList.filter(item=>item.id !==id)
+  const deleteTodo = (id) => {
+    const newTodo = todoList.filter(item => item.id !== id)
     setTodoList(newTodo)
-    }
+  }
 
   //{key:value}
   return (
-    <div className="todo-container">
-      <div className="todo-title">
-        Todo list
-      </div>
-      <TodoNew
-        addNewTodo={addNewTodo}
-      />
-      {todoList.length > 0 ?
-        <TodoData
-          
-          todoList={todoList}
-          deleteTodo={deleteTodo}
-        />:
-        <div className='logo-image'>
-          <img src={reactLogo} className='logo' alt="" srcSet="" />
+    <>
+      <Header />
+      <div className="todo-container">
+        <div className="todo-title">
+          Todo list
         </div>
-      }
-      {/* {todoList.length !== 0 &&
-        <TodoData
-          
-          todoList={todoList}
+        <TodoNew
+          addNewTodo={addNewTodo}
         />
-      }
+        {todoList.length > 0 ?
+          <TodoData
 
-      {todoList.length === 0 &&
-        <div className='logo-image'>
-          <img src={reactLogo} className='logo' alt="" srcSet="" />
-        </div>
-      } */}
+            todoList={todoList}
+            deleteTodo={deleteTodo}
+          /> :
+          <div className='logo-image'>
+            <img src={reactLogo} className='logo' alt="" srcSet="" />
+          </div>
+        }
 
-    </div>
+
+      </div>
+      <Footer/>
+    </>
+
   )
 }
 export default App;
